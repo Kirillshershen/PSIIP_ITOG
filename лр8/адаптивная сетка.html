@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="кастомизация.css" />
+    <style>
+        input.text::-webkit-input-placeholder {color:black;}
+        input.text::-moz-placeholder {color:black;}
+        input.text:-moz-placeholder {color:black;}
+        input.text:-ms-input-placeholder {color:black;}
+        textarea:focus, input:focus {outline: none;}
+
+        .tooltip {
+            position: absolute;
+            background-color: rgba(255, 0, 0, 0.8);
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .error {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+<div class="grid">
+    <div class="fon">
+        <div class="shapka"><h1>ФОРМА ОБРАТНОЙ СВЯЗИ</h1></div>
+        <div class="podshapka"><span style="color: brown;font-size:large;">*</span>Поля обязательные для заполнения</div>
+        <div class="crest colorCrest"></div>
+        <div class="name">
+            <input style="width: 800px;" class="text" type="text" id="name" name="name" placeholder="Имя" />
+        </div>
+        <div class="email">
+            <input style="width: 400px;" class="text" type="text" id="email" name="email" placeholder="email" />
+        </div>
+        <div class="phone">
+            <input style="width: 400px;" class="text" type="text" id="phone" name="phone" placeholder="Телефон" />
+        </div>
+        <div class="message">
+            <input class="text" type="text" id="message" name="message" placeholder="Сообщение" />
+        </div>
+        <div class="button1">
+            <button style="color: white;" class="text button11" id="submit" type="button">Отправить</button>
+        </div>
+        <div class="button2">
+            <button style="color: white;" class="text button22" id="reset" type="button">Сбросить</button>
+        </div>
+        <div class="zvezda1">*</div>
+        <div class="zvezda2">*</div>
+    </div>
+</div>
+
+<div id="tooltip" class="tooltip"></div>
+
+<script>
+document.getElementById('submit').addEventListener('click', function() {
+    const nameField = document.getElementById('name');
+    const emailField = document.getElementById('email');
+    const phoneField = document.getElementById('phone');
+    const messageField = document.getElementById('message');
+    const tooltip = document.getElementById('tooltip');
+
+    let isValid = true;
+
+    function showError(field, message) {
+        field.classList.add('error');
+        tooltip.innerText = message;
+        const rect = field.getBoundingClientRect();
+        tooltip.style.top = (rect.top + window.scrollY - tooltip.offsetHeight - 10) + 'px';
+        tooltip.style.left = (rect.left + window.scrollX) + 'px';
+        tooltip.style.display = 'block';
+        isValid = false;
+    }
+
+    function hideError(field) {
+        field.classList.remove('error');
+    }
+
+    tooltip.style.display = 'none';
+
+    // Name validation
+    if (nameField.value.trim() === '' || nameField.value.length < 2 || nameField.value.length > 50) {
+        showError(nameField, 'Имя должно быть от 2 до 50 символов');
+    } else {
+        hideError(nameField);
+    }
+
+    // Email validation
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailPattern.test(emailField.value)) {
+        showError(emailField, 'Введите корректный email');
+    } else {
+        hideError(emailField);
+    }
+
+    // Phone validation
+    const phonePattern = /^\+?[0-9\s\-]{7,15}$/;
+    if (!phonePattern.test(phoneField.value)) {
+        showError(phoneField, 'Введите корректный телефон');
+    } else {
+        hideError(phoneField);
+    }
+
+    // Message validation
+    if (messageField.value.trim() === '' || messageField.value.length < 5 || messageField.value.length > 500) {
+        showError(messageField, 'Сообщение должно быть от 5 до 500 символов');
+    } else {
+        hideError(messageField);
+    }
+
+    if (isValid) {
+        alert('Форма успешно отправлена!');
+    }
+});
+
+document.getElementById('reset').addEventListener('click', function() {
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('message').value = '';
+
+    const fields = document.querySelectorAll('.text');
+    fields.forEach(field => field.classList.remove('error'));
+
+    document.getElementById('tooltip').style.display = 'none';
+});
+</script>
+</body>
+</html>

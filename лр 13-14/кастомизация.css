@@ -1,0 +1,144 @@
+.grid {
+    display: grid;
+
+    width: 100%; /* max-width*/
+    height: 721px;
+    grid-template-columns: [columns1] 10% [columns2]80% [columns3] 10%[end];/*столбцы*/ 
+    grid-template-rows: [row1]  10%[row2] 80%[row3] 10%[last];/*строки*/   
+}
+body{
+    background-image:url('baground.jpg');
+    backdrop-filter: blur(5px);
+}
+.fon{
+    display: grid; 
+    grid-template-columns: [columns1] 10%[columns2] 40%[columns3] 40% [columns4] 5%[columns5] 20px [end];/*столбцы*/ 
+    grid-template-rows: [row1] 8%[row2] 10%[row3] 10%[row4] 15%[row5] 15%[row6] 25% [row7] 20px[last];/*строки*/  
+    grid-column: columns2 / columns3; grid-row: row2/ row3;
+    background-color: aliceblue;
+     
+   }    
+   .fon > * {
+    margin: 0 10px;
+  }
+.shapka{
+    grid-column: columns2/columns4 ; grid-row: row2/row3;
+}
+.shapka > * {
+    text-align: center;
+    vertical-align: middle; 
+    line-height: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 40px;
+}
+.podshapka{
+    grid-column: columns2 / columns4; grid-row: row3/row4;
+    text-align: center;
+vertical-align: middle;
+line-height: 90px;
+    font-size: 16px;
+    font-style: italic;
+    color: darkgray;
+}
+.text{
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 22px 22px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+
+    
+}
+input[type="text"]
+{
+    font-size:24px;
+    color: black;
+    
+}
+.name{
+    grid-column: columns2/columns4 ; grid-row: row4/row5;
+    margin: 10px 10px;
+    background-color:rgb(192, 192, 192);
+}
+.name_position{
+    margin: 22px 22px;
+}
+.zvezda1{
+    grid-column: columns3/columns4 ; grid-row: row4/row5;
+    text-align: right;
+        position: absolute;
+        top: 230px;
+        right: 250px;
+        font-size: 20px;
+        color: brown;
+
+}
+.zvezda2{
+    grid-column: columns3/columns4 ; grid-row: row5/row6;
+    text-align: right;
+        position: absolute;
+        top: 315px;
+        right:   720px;
+        font-size: 20px;
+        color: brown;
+
+}
+.email{
+    grid-column: columns2/columns3 ; grid-row: row5/row6;
+    margin: 10px 10px;
+    background-color:rgb(192, 192, 192);
+}
+.phone{
+    grid-column: columns3/columns4 ; grid-row: row5/row6;
+    margin: 10px 10px;
+    background-color:rgb(192, 192, 192);
+}
+.message{
+    grid-column: columns2/columns4 ; grid-row: row6/row7;
+    margin: 20px 20px;
+    background-color:rgb(192, 192, 192);
+}
+.button1{
+    grid-column: columns2/columns3 ; grid-row: row7/row8;
+
+}
+.button2{
+    grid-column: columns3/columns4 ; grid-row: row7/row8;
+
+}
+.button11{
+    background: transparent;
+    border: none;
+    margin: 10px 220px 30px 270px;
+    background-color: orange;
+    height: 50px;
+    width: 200px;
+}
+.button22{
+    background: transparent;
+    border: none;
+    margin: 10px 170px 30px 40px;
+    background-color:dimgrey;
+    height: 50px;
+    width: 200px;
+}
+.crest{
+    border-style:none;
+    grid-column: columns5 ; grid-row: row1/row2;
+    
+        display: block;
+        width: 49px;
+        height: 49px;
+        --weight: 3px;
+        --aa: 1px; /* anti-aliasing */
+        --color: rgb(255, 255, 255);
+        border-radius: 3px;
+      
+        background:
+          linear-gradient(45deg, transparent calc(50% - var(--weight) - var(--aa)), var(--color) calc(20% - var(--weight)), var(--color) calc(50% + var(--weight)), transparent calc(20% + var(--weight) + var(--aa))),
+          linear-gradient(-45deg, transparent calc(50% - var(--weight) - var(--aa)), var(--color) calc(20% - var(--weight)), var(--color) calc(50% + var(--weight)), transparent calc(20% + var(--weight) + var(--aa)));
+
+}
+.colorCrest{
+    background-color: orange;
+}

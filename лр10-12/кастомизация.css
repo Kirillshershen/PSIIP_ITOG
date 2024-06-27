@@ -1,0 +1,103 @@
+.grid {
+    display: grid;
+
+
+    max-width: 1500px; /* max-width*/
+    min-height: 1400px;
+}
+div{
+    overflow:hidden;
+}
+.cell {
+    border-style: ridge;
+}
+@media screen and (max-width: 2000px) {
+    .grid{
+        grid-template-columns: [line1] 27.27% [line2] 22.72% [line3] 27.27% [line4] 22.72% [end];
+    grid-template-rows: [row1] 14.28% [row2] 14.28% [row3] 15% [row4] 26.83% [row5] 17.28% [row6] 12.33% [last];
+    }
+    .g1{
+     grid-column: line1 / end; grid-row: row1;}
+.g2{
+    grid-column: line1; grid-row: row2;
+}
+.g3{
+    grid-column: line2; grid-row: row2;
+}
+.g4{
+    grid-column: line1/line3; grid-row: row3;
+}
+.g5{
+    grid-column: line3; grid-row: row2 / row4;
+}
+.g6{
+    grid-column: line4; grid-row: row2 / row4;
+}
+.g7{
+    grid-column: line1 / end; grid-row: row4;
+}
+.g8{
+    grid-column: line1 / end; grid-row: row5;
+}
+.g9{
+    grid-column: line1 / line3; grid-row: row6 ;
+}
+.g10{
+    grid-column: line3 / end; grid-row: row6;
+}
+
+}
+@media screen and ( max-width: 700px) {
+    .grid{
+        grid-template-columns: [columns1] 50% [columns2] 10%[columns3] 40% [end];/* столбцы*/
+    grid-template-rows: [row1] 15% [row2] 20% [row3] 30%[row4] 30% [row5] 30%[row6] 15% [row7] 10%[row8] 10%[row9] 10% [last];/* строки*/
+    }
+    .g1{
+    grid-column:columns1 / end ;
+    grid-row: row1/row2;
+}
+.g2{
+    grid-column:columns1 / columns2 ;
+    grid-row: row2/row3;
+
+}
+.g3{
+    grid-column:columns2 / end ;
+    grid-row: row2/row3;
+}
+.g4{
+    grid-column:columns1 / end ;
+    grid-row: row3/row4;
+}
+.g5{
+    grid-column:columns1 / columns3 ;
+    grid-row: row4/row5;
+}
+.g6{
+    grid-column:columns3 / end ;
+    grid-row: row4/row5;
+}
+.g7{
+    grid-column:columns1 / end ;
+    grid-row: row5/row6;
+}
+.g8{
+    grid-column:columns1 / end ;
+    grid-row: row6/row7;
+}
+.g9{
+    grid-column:columns1 / end ;
+    grid-row: row7/row8;
+}
+.g10{
+    grid-column:columns1 / end ;
+    grid-row: row8/row9;
+}
+}
+i{
+    align-content: center;
+    color: blue;
+}
+i::first-letter {
+    color: brown;
+  }

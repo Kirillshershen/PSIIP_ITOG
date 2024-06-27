@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox в CSS3</title>
+    <link rel="stylesheet" href="кастомизация.css" />
+    <style>
+        
+    </style> 
+    <script src="file.js">
+    </script>
+        <script type="text/javascript">
+            function DATA_VIEM() {
+    let date = new Date();
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+    let timeString = hours + ":" + (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+    document.getElementById("cell-g1").innerHTML = timeString;
+}
+        </script>
+
+</head>
+<body>
+
+    <script type="text/javascript">
+function FI() {
+    var FIO = "Шершень Кирилл";
+    var n = 0;
+    var output = "";
+    while (n < 22) {
+        output += FIO + " ";
+        n += 1;
+    }
+    document.getElementById("cell-g2").innerHTML = output;
+}
+
+
+function createArray() {
+    originalArray = [];
+    for (var i = 0; i < 8; i++) {
+        var randomNum = Math.floor(Math.random() * 100);
+        originalArray.push(randomNum);
+    }
+    document.getElementById("cell-g4").innerHTML += "<br>" + originalArray.join(", ");
+}
+
+function sortArray() {
+    sortedArray = [...originalArray].sort((a, b) => a - b);
+    document.getElementById("cell-g4").innerHTML += "<br>" + sortedArray.join(", ");
+}
+
+function removeFirstElement() {
+    if (sortedArray.length > 0) {
+        modifiedArray = [...sortedArray];
+        modifiedArray.shift();
+        document.getElementById("cell-g4").innerHTML += "<br>" + modifiedArray.join(", ");
+    }
+}
+
+function showBothArrays() {
+    var arraysString = "<br>Исходный массив: " + originalArray.join(", ") + "<br>Измененный массив: " + modifiedArray.join(", ");
+    document.getElementById("cell-g4").innerHTML += arraysString;
+}
+</script>
+<div class="grid">
+    <div class="cell g1">
+        <b id="cell-g1"></b>
+        <button onclick="DATA_VIEM()">Показать дату и время</button>
+    </div>
+    <div class="cell g2">
+        <b id="cell-g2"></b>
+        <button onclick="FI()">Вывести фамилию 22 раза</button>
+    </div>
+    <div class="cell g3">
+        <b id="cell-g3"></b>
+        <button onclick="createArray()">Вывести массив</button><br>
+        <button onclick="sortArray()">Отсортировать массив</button><br>
+        <button onclick="removeFirstElement()">Удалить первый элемент</button><br>
+        <button onclick="showBothArrays()">Показать оба массива</button>
+    </div>
+    <div class="cell g4">
+        <b id="cell-g4"></b>
+    </div>
+    <div class="cell g5">
+        <input type="number" id="x-value" placeholder="Введите x" />
+        <button onclick="calculateFormula(document.getElementById('x-value').value)">Рассчитать формулу</button>
+        <b id="formula-result"></b>
+    </div>
+    <div class="cell g6">
+        <button onclick="stringOperations()">Выполнить операции над строками</button>
+    </div>
+    <div class="cell g7">    var s1 = "Я люблю Беларусь";
+        var s2 = "Я учусь в Политехническом колледже";
+        <p id="string-length"></p>
+        <p id="eleventh-char"></p>
+        <p id="modified-s1"></p>
+    </div>
+    <div class="cell g8">Ячейка 8</div>
+    <div class="cell g9">Ячейка 9</div>
+    <div class="cell g10">Ячейка 10</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Flexbox в CSS3</title>
+        <style>
+            .grid { 
+                display: grid;
+                background-color: aquamarine; 
+                border-style:ridge ;
+                max-width: 1460px; /* max-width*/
+                height: 1400px;
+                grid-template-columns: [line1] 27.27% [line2]22.72% [line3]27.27% [line4]22.72% [end];
+                grid-template-rows: [row1]14.28% [row2]14.28% [row3]24% [row4]23.83% [row5]14.28% [row6]9.33% [last] ;
+
+
+            }
+            .cell{
+                border-style:ridge ;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="grid">
+            <div class="cell" style="grid-column: line1 / end; grid-row: row1;">Ячейка 1</div>
+            <div class="cell" style="grid-column: line1; grid-row: row2;">Ячейка 2</div>
+            <div class="cell" style="grid-column: line2; grid-row: row2;">Ячейка 3</div>
+            <div class="cell" style="grid-column: line1/line3; grid-row: row3;">Ячейка 4</div>
+            <div class="cell" style="grid-column: line3; grid-row: row2 / row4;">Ячейка 5</div>
+            <div class="cell" style="grid-column: line4; grid-row: row2 / row4;">Ячейка 6</div>
+            <div class="cell" style="grid-column: line1 / end; grid-row: row4;">Ячейка 7</div>
+            <div class="cell" style="grid-column: line1 / end; grid-row: row5;">Ячейка 8</div>
+            <div class="cell" style="grid-column: line1 / line3; grid-row: row6 ;">Ячейка 9</div>
+            <div class="cell" style="grid-column: line3 / end; grid-row: row6;">Ячейка 10</div>
+        </div>
+    </body>
+</html>

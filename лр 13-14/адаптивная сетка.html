@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личная информация</title>
+    <style>
+/* .info-element {
+            color: red;
+            background-color: yellow;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            border: 2px solid black;
+            margin-top: 5px;
+            padding: 5px;
+        } */
+    </style>
+</head>
+<body>
+    <div id="delete">    
+        <p>Шершень Кирилл Алексеевич</p>
+        <div>02.11.2004</div>
+        <img src="shoes.jpg" alt="Описание изображения">
+    </div>
+    <div class="info1" id="info1"></div>
+    <div class="info" id="info"></div>
+
+
+    <script>
+function updateInfo() {
+    const infoDiv = document.getElementById('info');
+            const date = new Date();
+            const size = document.documentElement.innerHTML.length;
+            const info = `Дата: ${date.toLocaleString()}, Размер документа: ${size} байт`;
+
+            const infoElement = document.createElement('div');
+            infoElement.textContent = info;
+            infoElement.classList.add('info-element');  // Добавление класса для стилей
+            
+
+// Добавляем событие onclick
+infoElement.onclick = function() {
+        infoElement.style.color = 'red';
+        infoElement.style.backgroundColor = 'yellow';
+        infoElement.style.fontFamily = 'Arial, sans-serif';
+        infoElement.style.fontSize = '14px';
+        infoElement.style.border = '2px solid black';
+        infoElement.style.marginTop = '5px';
+        infoElement.style.padding = '5px';
+        infoDiv.appendChild(infoElement);
+    };
+
+   
+
+
+infoDiv.appendChild(infoElement);
+}
+        
+
+        setInterval(updateInfo, 5000);
+
+        document.getElementById('delete').addEventListener('click', function(event) {
+            this.remove();
+        });
+        checkCookies();
+        updateInfo();
+
+
+        function checkCookies() {
+            const cookiesEnabled = navigator.cookieEnabled ? "включены" : "выключены";
+            const infoDiv = document.getElementById('info1');
+            const cookiesInfo = `Куки файлы ${cookiesEnabled} в браузере.`;
+            
+            const cookiesElement = document.createElement('div');
+            cookiesElement.textContent = cookiesInfo;
+           
+        }
+        function setTimeout() {
+            window.close();
+        }
+
+        setInterval(setTimeout, 2000);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Шершень Кирилл Алексеевич</title>
+    <meta name="keywords" content="ключевые слова">
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid black;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            white-space: nowrap;
+            
+        }
+        .top-left {
+            vertical-align: top; 
+            text-align: left; 
+        }
+        p {
+            white-space: pre;
+        }
+        .reg_butt{
+            background-color: rgb(82, 82, 82);
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html">Шершень Кирилл Алексеевич</a>
+    <table width="70%">
+        <tr style="background-color: rgb(94, 94, 94); width:500px; ">
+            <td  colspan="3" >Таблица</td>
+        </tr>
+        <tr>
+            <td rowspan="2" class="top-left">Первый столбик</td>
+            <td>Второй</td>
+            <td>Второй</td>
+        </tr>
+        <tr>
+            <td>Третий</td>
+            <td>Третий</td>
+        </tr>
+    </table>
+    <h2>Заказать звонок</h2>
+    <div class="register">
+        <form >
+            <p >Укажите свой контактный телефон и мы 
+перезвоним вам в течении 5 минут</p>
+            <p></p>
+            <div>
+                <input type="text" name="surname" placeholder="Ваше имя" required>
+                <p></p>
+                <input type="text" name="name" placeholder="Ваш номер телефона*" required>
+                <p></p>
+                <input id="html" type="checkbox">
+                <label for="html">Соглашаюсь на</label><a href=" "> обработку данных</a>
+            </div>
+            <button type="submit" class="reg_butt">Перезвоните мне</button>
+        </form>
+    </div>
+</body>
+</html>
